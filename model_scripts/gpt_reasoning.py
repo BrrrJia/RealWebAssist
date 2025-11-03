@@ -90,10 +90,12 @@ def get_coordinate(config_data, history, base_dir, output_dir):
 
 
         print(image_path)
-        print(instruction)
+        print("original instruction: ", instruction)
 
 
         instruction = gpt_reasoning(config_data, history, base_dir)
+        print("reasoning instruction: ", instruction)
+        
         with open("../output_files/reasoning_results/gpt_reasoning_10.json", "r") as file:
             data = json.load(file)
         num = config_data["final_image"].split("/")[-3]
