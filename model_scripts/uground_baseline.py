@@ -41,7 +41,7 @@ model = Qwen2VLForConditionalGeneration.from_pretrained(
 processor = AutoProcessor.from_pretrained("osunlp/UGround-V1-7B", 
                                     use_fast=True, 
                                     trust_remote_code=True, 
-                                    local_files_only=True)
+                                    use_auth_token=False)
 count = 0
 
 def get_coordinate(config_data, history, base_dir, output_dir):
