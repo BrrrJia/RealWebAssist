@@ -114,4 +114,5 @@ def get_coordinate(config_data, history, base_dir, output_dir):
 
         return center_x, center_y
     except Exception as e:
+        print(e)
         return (None, None)
