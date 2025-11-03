@@ -38,7 +38,7 @@ def rescale_coordinates(scaled_coords, orig_width, orig_height, scale_range=1000
 model = Qwen2VLForConditionalGeneration.from_pretrained(
     "osunlp/UGround-V1-7B", torch_dtype="auto", device_map="auto"
 )
-processor = AutoProcessor.from_pretrained("osunlp/UGround-V1-7B")
+processor = AutoProcessor.from_pretrained("osunlp/UGround-V1-7B", use_fast=True, trust_remote_code=True)
 count = 0
 
 def get_coordinate(config_data, history, base_dir, output_dir):
