@@ -94,8 +94,11 @@ def get_coordinate(config_data, history, base_dir, output_dir):
 
 
         instruction = gpt_reasoning(config_data, history, base_dir)
-        print("reasoning instruction: ", instruction)
-        
+        if instruction == "":
+            print("reasoning instruction is empty")
+        else:
+            print("reasoning instruction: ", instruction)
+
         with open("../output_files/reasoning_results/gpt_reasoning_10.json", "r") as file:
             data = json.load(file)
         num = config_data["final_image"].split("/")[-3]
