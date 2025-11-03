@@ -54,7 +54,7 @@ def gpt_reasoning(config_data, history, base_dir):
     )
     
     # Print and return the response
-    print(response.choices[0].message.content)
+    print("reasoning result: ", response.choices[0].message.content)
     return response.choices[0].message.content
 
 def parse_coordinates(output_text):
@@ -94,7 +94,7 @@ def get_coordinate(config_data, history, base_dir, output_dir):
 
 
         instruction = gpt_reasoning(config_data, history, base_dir)
-        if instruction == "":
+        if instruction == None:
             print("reasoning instruction is empty")
         else:
             print("reasoning instruction: ", instruction)
